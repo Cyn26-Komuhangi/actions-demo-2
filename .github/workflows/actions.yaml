@@ -1,7 +1,7 @@
 # This is  a test workflow for GitHub Actions. It is triggered on push and pull request events to the main branch. The workflow consists of a single job that runs on the latest version of Ubuntu. The job includes a step to check out the repository code and another step to run a simple script that prints "Hello, World!" to the console.```yaml
-name :ci
+name: ci
 
- on:
+on:
   push:
     branches: [ main ]
 
@@ -15,7 +15,7 @@ name :ci
 
            - name: Set up node.js
              uses: actions/setup-node@v6
-              with:
+             with:
                 node-version: '24'
                 cache: 'npm'
              

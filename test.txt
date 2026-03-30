@@ -1,1 +1,21 @@
 Hello
+
+name: my workflow #workflow name
+
+on:                            #event(s) that triggers the workflow
+  push:
+    branches: [ main,develop ] #trigger on push to main branch
+
+jobs:                            #one or more jobs that will run as part of the workflow
+  my-job:                         #job name
+    runs-on: ubuntu-latest        #specifies the type of runner to use(runnerOS)
+
+    steps:                         #steps that will be executed as part of the job
+      - name: Checkout code         #step name
+        uses: actions/checkout@v4  #uses the checkout action to check out the repository code(reusable action  )
+
+      - name: say Hello        #step name
+        run: echo "Hello, World!"   #runs a simple script that prints "Hello, World!" to the console #shell command
+  pull_request:
+    branches: [ main ] #trigger on pull request to main branch
+

@@ -1,3 +1,21 @@
 # This is  a test workflow for GitHub Actions. It is triggered on push and pull request events to the main branch. The workflow consists of a single job that runs on the latest version of Ubuntu. The job includes a step to check out the repository code and another step to run a simple script that prints "Hello, World!" to the console.```yaml
-name: Test Workflow
+name :ci
 
+ on:
+  push:
+    branches: [ develop ]
+
+    jobs:
+       test:
+         runs-on: ubuntu-latest
+
+         steps:
+           - name: Check out 
+             uses: actions/checkout@v6
+
+           - name: Set up node.js
+             uses: actions/setup-node@v6
+              with:
+                node-version: '24'
+                cache: 'npm'
+             
